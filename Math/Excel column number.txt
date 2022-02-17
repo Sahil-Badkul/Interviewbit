@@ -1,0 +1,9 @@
+int Solution::titleToNumber(string A) {
+    int res = 0;
+    int pos = 0;
+    while(pos < A.size()){
+        res = res*26 + A[pos] - '@';
+        pos++;
+    }
+    return res;
+}

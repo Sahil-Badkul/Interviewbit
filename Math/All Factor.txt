@@ -1,0 +1,20 @@
+/*
+Given a number find all factor of N.
+Note:- TC must be less then O(N)
+*/
+
+vector<int> Solution::allFactors(int A) {
+    vector<int> factor;
+    for(int i = 1; i <= sqrt(A); i++){
+        if(A%i == 0){
+            if(A/i == i){
+                factor.push_back(i);
+            }else{
+                factor.push_back(i);
+                factor.push_back(A/i);
+            }
+        }
+    }
+    sort(factor.begin(),factor.end());
+    return factor;
+}

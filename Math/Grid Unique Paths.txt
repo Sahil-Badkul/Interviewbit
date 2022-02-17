@@ -1,0 +1,32 @@
+// Recursion
+
+int ans(int i, int j, int A, int B){
+    if(i >= A or j >= B){
+        return 0;
+    }else if(i == A-1 or j == B-1){
+        return 1;
+    }
+    return ans(i+1,j,A,B) + ans(i,j+1,A,B);
+}
+int Solution::uniquePaths(int A, int B) {
+    return ans(0,0,A,B);
+}
+
+
+// Math 
+
+int Solution::uniquePaths(int A, int B) {
+    if(A == 1 or B == 1){
+        return 1;
+    }
+    int N = A+B-2; // Total number of moves.
+    int r = A-1; // Total down moves.
+    double res = 1; // For ans.
+    // Finding permutaion
+    for(int i = 1; i <= r; i++){
+        res = res * (N-r+i)/i;
+    }
+    return (int)res;
+}
+
+

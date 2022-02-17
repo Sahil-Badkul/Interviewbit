@@ -1,0 +1,14 @@
+/*Given an integer N. return binary representation of N*/
+
+string Solution::findDigitsInBinary(int A) {
+    string ans = "";
+    if(A <= 0){
+        return "0";
+    }
+    while(A){
+        ans += A&1 ? "1" : "0";
+        A = A >> 1;
+    }
+    reverse(ans.begin(),ans.end());
+    return ans;
+}

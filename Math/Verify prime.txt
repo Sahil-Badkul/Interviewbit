@@ -1,0 +1,13 @@
+/*
+Given an integer say whether it is prime or not.
+In TC < O(N)
+*/
+int Solution::isPrime(int A) {
+    if(A < 2){
+        return 0;
+    }
+    for(int i = 2; i <= sqrt(A); i++){
+        if(A%i == 0) return 0;
+    }
+    return 1;
+}
